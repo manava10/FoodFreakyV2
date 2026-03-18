@@ -1,0 +1,75 @@
+const mongoose = require('mongoose');
+
+const MenuSchema = new mongoose.Schema({
+    category: {
+        type: String,
+        required: true,
+    },
+    items: [{
+        name: {
+            type: String,
+            required: true,
+        },
+        price: {
+            type: Number,
+            required: true,
+        },
+        emoji: String,
+        imageUrl: {
+            type: String, // Field for the dish image URL
+        },
+    }],
+});
+
+const RestaurantSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: [true, 'Please add a name'],
+        unique: true,
+        trim: true,
+    },
+    cuisine: {
+        type: String,
+        required: [true, 'Please add a cuisine type'],
+    },
+    deliveryTime: {
+        type: String,
+        required: true,
+    },
+    tags: [String],
+    imageUrl: {
+        type: String,
+    },
+    menu: [MenuSchema],
+    averageRating: {
+        type: Number,
+        default: 0,
+    },
+    numberOfReviews: {
+        type: Number,
+        default: 0,
+    },
+    isAcceptingOrders: {
+        type: Boolean,
+        default: true,
+    },
+    type: {
+        type: String,
+        enum: ['restaurant', 'fruit_stall'],
+        default: 'restaurant',
+    }
+}, {
+    timestamps: true,
+});
+
+// Indexes for better query performance
+// Note: 'name' field already has an index from 'unique: true'
+RestaurantSchema.index({ cuisine: 1 });
+RestaurantSchema.index({ tags: 1 });
+RestaurantSchema.index({ averageRating: -1 });
+RestaurantSchema.index({ type: 1 });
+RestaurantSchema.index({ createdAt: -1 }); // Index for sorting by creation date
+RestaurantSchema.index({ isAcceptingOrders: 1, type: 1 }); // Compound index for filtering open restaurants
+RestaurantSchema.index({ type: 1, createdAt: -1 }); // Compound index for type + sort queries
+
+module.exports = mongoose.model('Restaurant', RestaurantSchema);
