@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useAuth } from './AuthContext';
 import { useToast } from './ToastContext';
@@ -19,17 +19,7 @@ export const FavoritesProvider = ({ children }) => {
     const { isLoggedIn, authToken } = useAuth();
     const { showSuccess, showError } = useToast();
 
-    // Fetch favorites when user logs in
-    useEffect(() => {
-        if (isLoggedIn && authToken) {
-            fetchFavorites();
-        } else {
-            setFavorites([]);
-            setLoading(false);
-        }
-    }, [isLoggedIn, authToken]);
-
-    const fetchFavorites = async () => {
+    const fetchFavorites = useCallback(async () => {
         try {
             const config = {
                 headers: {
@@ -46,7 +36,17 @@ export const FavoritesProvider = ({ children }) => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [authToken]);
+
+    // Fetch favorites when user logs in
+    useEffect(() => {
+        if (isLoggedIn && authToken) {
+            fetchFavorites();
+        } else {
+            setFavorites([]);
+            setLoading(false);
+        }
+    }, [isLoggedIn, authToken, fetchFavorites]);
 
     const addToFavorites = async (restaurantId) => {
         if (!isLoggedIn) {

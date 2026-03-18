@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
@@ -19,11 +19,7 @@ const RestaurantManager = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    useEffect(() => {
-        fetchRestaurants();
-    }, []);
-
-    const fetchRestaurants = async () => {
+    const fetchRestaurants = useCallback(async () => {
         try {
             // Use admin route to get all restaurants with accepting orders status
             const config = { headers: { Authorization: `Bearer ${authToken}` } };
@@ -46,7 +42,11 @@ const RestaurantManager = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [authToken]);
+
+    useEffect(() => {
+        fetchRestaurants();
+    }, [fetchRestaurants]);
 
     const handleCreateRestaurant = async (e) => {
         e.preventDefault();

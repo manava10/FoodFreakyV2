@@ -10,7 +10,6 @@ import Modal from '../components/Modal';
 import Header from '../components/Header';
 import Rating from '../components/Rating'; // Import the Rating component
 import { RestaurantListSkeleton } from '../components/RestaurantCardSkeleton';
-import { MenuItemListSkeleton } from '../components/MenuItemSkeleton';
 import { SkeletonBox } from '../components/Skeleton';
 import { EmptyRestaurants, EmptyMenuItems } from '../components/EmptyState';
 import './RestaurantPage.css';

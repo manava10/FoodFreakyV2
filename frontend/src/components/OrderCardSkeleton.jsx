@@ -1,5 +1,5 @@
 import React from 'react';
-import { SkeletonBox, SkeletonText, SkeletonCircle } from './Skeleton';
+import { SkeletonBox, SkeletonCircle } from './Skeleton';
 
 /**
  * Skeleton for Order Card

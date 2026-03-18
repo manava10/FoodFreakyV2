@@ -919,3 +919,34 @@
 {"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":85,"service":"foodfreaky-api","timestamp":"2026-03-18 09:46:38","total":30}
 {"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":82,"service":"foodfreaky-api","timestamp":"2026-03-18 09:46:38","total":30}
 {"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":84,"service":"foodfreaky-api","timestamp":"2026-03-18 09:46:38","total":30}
+{"level":"info","message":"Server is running on port 5001 in development mode","service":"foodfreaky-api","timestamp":"2026-03-18 10:13:06"}
+{"level":"info","message":"User mmanavp10@gmail.com logged in with Google","service":"foodfreaky-api","timestamp":"2026-03-18 10:13:40"}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":164,"service":"foodfreaky-api","timestamp":"2026-03-18 10:13:40","total":30}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":103,"service":"foodfreaky-api","timestamp":"2026-03-18 10:13:40","total":30}
+{"count":398,"level":"info","limit":10000,"message":"Admin 68c033cda8f9e4e8225057d6 fetched orders","page":1,"role":"admin","service":"foodfreaky-api","timestamp":"2026-03-18 10:13:57","total":398}
+{"count":2,"level":"info","message":"Admin 68c033cda8f9e4e8225057d6 fetched riders list","service":"foodfreaky-api","timestamp":"2026-03-18 10:13:57"}
+{"count":2,"level":"info","message":"Admin 68c033cda8f9e4e8225057d6 fetched riders list","service":"foodfreaky-api","timestamp":"2026-03-18 10:13:57"}
+{"count":398,"level":"info","limit":10000,"message":"Admin 68c033cda8f9e4e8225057d6 fetched orders","page":1,"role":"admin","service":"foodfreaky-api","timestamp":"2026-03-18 10:13:58","total":398}
+{"count":10,"level":"info","message":"Admin 68c033cda8f9e4e8225057d6 fetched restaurants","queryTime":50,"service":"foodfreaky-api","timestamp":"2026-03-18 10:14:00"}
+{"count":10,"level":"info","message":"Admin 68c033cda8f9e4e8225057d6 fetched restaurants","queryTime":48,"service":"foodfreaky-api","timestamp":"2026-03-18 10:14:00"}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":75,"service":"foodfreaky-api","timestamp":"2026-03-18 10:14:14","total":31}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":96,"service":"foodfreaky-api","timestamp":"2026-03-18 10:14:14","total":31}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":85,"service":"foodfreaky-api","timestamp":"2026-03-18 10:14:14","total":31}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":101,"service":"foodfreaky-api","timestamp":"2026-03-18 10:14:14","total":31}
+{"level":"info","message":"User mmanavp12@gmail.com logged in with Google","service":"foodfreaky-api","timestamp":"2026-03-18 10:14:33"}
+{"count":0,"level":"info","limit":20,"message":"User 68c0391e252c1f3abd6fe8e9 fetched orders","page":1,"queryTime":132,"service":"foodfreaky-api","timestamp":"2026-03-18 10:14:33","total":0}
+{"count":0,"level":"info","limit":20,"message":"User 68c0391e252c1f3abd6fe8e9 fetched orders","page":1,"queryTime":50,"service":"foodfreaky-api","timestamp":"2026-03-18 10:14:33","total":0}
+{"count":6,"level":"info","limit":1000,"message":"Admin 68c0391e252c1f3abd6fe8e9 fetched orders","page":1,"role":"rider","service":"foodfreaky-api","timestamp":"2026-03-18 10:14:37","total":6}
+{"count":6,"level":"info","limit":1000,"message":"Admin 68c0391e252c1f3abd6fe8e9 fetched orders","page":1,"role":"rider","service":"foodfreaky-api","timestamp":"2026-03-18 10:14:37","total":6}
+{"level":"info","message":"Rider location updated for order 69ba2d880feb48ee1ccbbb29 by 68c0391e252c1f3abd6fe8e9","service":"foodfreaky-api","timestamp":"2026-03-18 10:14:44"}
+{"level":"info","message":"Rider location updated for order 69ba2d880feb48ee1ccbbb29 by 68c0391e252c1f3abd6fe8e9","service":"foodfreaky-api","timestamp":"2026-03-18 10:14:54"}
+{"level":"info","message":"Awarded 6 credits to user {\n  _id: new ObjectId('68c033cda8f9e4e8225057d6'),\n  name: 'Manav Mehta',\n  email: 'mmanavp10@gmail.com'\n} for order 69ba2d880feb48ee1ccbbb29","service":"foodfreaky-api","timestamp":"2026-03-18 10:15:00"}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":87,"service":"foodfreaky-api","timestamp":"2026-03-18 10:15:10","total":31}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":274,"service":"foodfreaky-api","timestamp":"2026-03-18 10:15:11","total":31}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":431,"service":"foodfreaky-api","timestamp":"2026-03-18 10:15:11","total":31}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":100,"service":"foodfreaky-api","timestamp":"2026-03-18 10:15:11","total":31}
+{"count":6,"level":"info","limit":1000,"message":"Admin 68c0391e252c1f3abd6fe8e9 fetched orders","page":1,"role":"rider","service":"foodfreaky-api","timestamp":"2026-03-18 10:15:17","total":6}
+{"count":6,"level":"info","limit":1000,"message":"Admin 68c0391e252c1f3abd6fe8e9 fetched orders","page":1,"role":"rider","service":"foodfreaky-api","timestamp":"2026-03-18 10:15:17","total":6}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":88,"service":"foodfreaky-api","timestamp":"2026-03-18 10:15:50","total":31}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":118,"service":"foodfreaky-api","timestamp":"2026-03-18 10:16:00","total":31}
+{"count":20,"level":"info","limit":20,"message":"User 68c033cda8f9e4e8225057d6 fetched orders","page":1,"queryTime":92,"service":"foodfreaky-api","timestamp":"2026-03-18 10:16:37","total":31}

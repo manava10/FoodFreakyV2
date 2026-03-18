@@ -9,8 +9,7 @@ import Modal from '../components/Modal';
 import Header from '../components/Header';
 import Rating from '../components/Rating';
 import { RestaurantListSkeleton } from '../components/RestaurantCardSkeleton';
-import { EmptyRestaurants, EmptyMenuItems } from '../components/EmptyState';
-import { SkeletonBox } from '../components/Skeleton';
+import { EmptyMenuItems } from '../components/EmptyState';
 import './RestaurantPage.css';
 // Using the same background or a new one if provided
 // For now, let's use a fruit-themed background placeholder or style

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
@@ -31,7 +31,7 @@ const OrderTrackingModal = ({ show, onClose, order }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const fetchTracking = async () => {
+    const fetchTracking = useCallback(async () => {
         if (!order?._id || !authToken) return;
         try {
             const { data } = await axios.get(
@@ -47,7 +47,7 @@ const OrderTrackingModal = ({ show, onClose, order }) => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [order?._id, authToken]);
 
     useEffect(() => {
         if (!show || !order) return;
@@ -55,7 +55,7 @@ const OrderTrackingModal = ({ show, onClose, order }) => {
         fetchTracking();
         const interval = setInterval(fetchTracking, TRACKING_POLL_MS);
         return () => clearInterval(interval);
-    }, [show, order?._id, authToken]);
+    }, [show, order, fetchTracking]);
 
     if (!show) return null;
 

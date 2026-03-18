@@ -8,7 +8,7 @@ import { EmptyRestaurants } from '../components/EmptyState';
 import foodBackground from '../assets/images/food-background.jpg';
 
 const FavoritesPage = () => {
-    const { favorites, loading, toggleFavorite, isFavorited } = useFavorites();
+    const { favorites, loading, toggleFavorite } = useFavorites();
     const { isLoggedIn } = useAuth();
     const navigate = useNavigate();
 

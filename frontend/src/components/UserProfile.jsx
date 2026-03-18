@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import './UserProfile.css';
 
 const UserProfile = ({ isOpen, onClose }) => {
-    const { authToken, user: tokenUser } = useAuth();
+    const { authToken } = useAuth();
     const { showSuccess, showError: showErrorToast } = useToast();
     const navigate = useNavigate();
     const [userDetails, setUserDetails] = useState(null);
@@ -17,54 +17,7 @@ const UserProfile = ({ isOpen, onClose }) => {
     const [updatingPhone, setUpdatingPhone] = useState(false);
     const [phoneError, setPhoneError] = useState('');
 
-    useEffect(() => {
-        if (isOpen && authToken) {
-            fetchUserProfile();
-        }
-    }, [isOpen, authToken]);
-
-    useEffect(() => {
-        if (userDetails) {
-            setPhoneNumber(userDetails.contactNumber || '');
-        }
-    }, [userDetails]);
-
-    const handleUpdatePhone = async () => {
-        if (phoneNumber.length !== 10) {
-            setPhoneError('Phone number must be exactly 10 digits');
-            return;
-        }
-
-        setUpdatingPhone(true);
-        setPhoneError('');
-
-        try {
-            const config = {
-                headers: { Authorization: `Bearer ${authToken}` },
-            };
-
-            const { data } = await axios.put(
-                `${process.env.REACT_APP_API_URL}/api/auth/profile`,
-                { contactNumber: phoneNumber },
-                config
-            );
-
-            if (data.success) {
-                setUserDetails({ ...userDetails, contactNumber: phoneNumber });
-                setIsEditingPhone(false);
-                showSuccess('Phone number updated successfully! 📱');
-            }
-        } catch (error) {
-            console.error('Failed to update phone number:', error);
-            const errorMsg = error.response?.data?.msg || 'Failed to update phone number. Please try again.';
-            setPhoneError(errorMsg);
-            showErrorToast(errorMsg);
-        } finally {
-            setUpdatingPhone(false);
-        }
-    };
-
-    const fetchUserProfile = async () => {
+    const fetchUserProfile = useCallback(async () => {
         try {
             setLoading(true);
             const config = {
@@ -105,6 +58,53 @@ const UserProfile = ({ isOpen, onClose }) => {
             console.error('Failed to fetch user profile:', error);
         } finally {
             setLoading(false);
+        }
+    }, [authToken]);
+
+    useEffect(() => {
+        if (isOpen && authToken) {
+            fetchUserProfile();
+        }
+    }, [isOpen, authToken, fetchUserProfile]);
+
+    useEffect(() => {
+        if (userDetails) {
+            setPhoneNumber(userDetails.contactNumber || '');
+        }
+    }, [userDetails]);
+
+    const handleUpdatePhone = async () => {
+        if (phoneNumber.length !== 10) {
+            setPhoneError('Phone number must be exactly 10 digits');
+            return;
+        }
+
+        setUpdatingPhone(true);
+        setPhoneError('');
+
+        try {
+            const config = {
+                headers: { Authorization: `Bearer ${authToken}` },
+            };
+
+            const { data } = await axios.put(
+                `${process.env.REACT_APP_API_URL}/api/auth/profile`,
+                { contactNumber: phoneNumber },
+                config
+            );
+
+            if (data.success) {
+                setUserDetails({ ...userDetails, contactNumber: phoneNumber });
+                setIsEditingPhone(false);
+                showSuccess('Phone number updated successfully! 📱');
+            }
+        } catch (error) {
+            console.error('Failed to update phone number:', error);
+            const errorMsg = error.response?.data?.msg || 'Failed to update phone number. Please try again.';
+            setPhoneError(errorMsg);
+            showErrorToast(errorMsg);
+        } finally {
+            setUpdatingPhone(false);
         }
     };
 

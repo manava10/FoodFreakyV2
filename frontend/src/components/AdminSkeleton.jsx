@@ -1,5 +1,5 @@
 import React from 'react';
-import { SkeletonBox, SkeletonText } from './Skeleton';
+import { SkeletonBox } from './Skeleton';
 import { OrderListSkeleton } from './OrderCardSkeleton';
 
 /**

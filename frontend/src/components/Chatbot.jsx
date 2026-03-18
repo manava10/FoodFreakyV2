@@ -8,7 +8,7 @@ const GREETING = "Hi! I'm your FoodFreaky assistant. I can help you with:\n• Y
 const matches = (text, keywords) => keywords.some(kw => text.includes(kw));
 
 const Chatbot = () => {
-    const { user, authToken, isLoggedIn } = useAuth();
+    const { authToken, isLoggedIn } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([
         { role: 'bot', text: GREETING, timestamp: new Date() }
