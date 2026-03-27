@@ -3711,3 +3711,18 @@
 {"count":1,"level":"info","limit":20,"message":"User 69c57952e39d249a2e1d1a0d fetched orders","page":1,"queryTime":142,"service":"foodfreaky-api","timestamp":"2026-03-27 05:44:19","total":1}
 {"error":"There is more than one 2dsphere index on yogiproject.restaurants; unsure which to use for $geoNear","level":"error","message":"Geo recommend failed:","service":"foodfreaky-api","timestamp":"2026-03-27 05:44:40"}
 {"error":"There is more than one 2dsphere index on yogiproject.restaurants; unsure which to use for $geoNear","level":"error","message":"Geo recommend (wide) failed:","service":"foodfreaky-api","timestamp":"2026-03-27 05:44:40"}
+{"level":"info","message":"Server is running on port 5001 in development mode","service":"foodfreaky-api","timestamp":"2026-03-27 05:58:39"}
+{"level":"info","message":"User mmanavp10@gmail.com logged in with Google","service":"foodfreaky-api","timestamp":"2026-03-27 05:58:59"}
+{"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-03-27 05:58:59"}
+{"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-03-27 05:58:59"}
+{"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-03-27 05:59:09"}
+{"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-03-27 05:59:09"}
+{"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-03-27 06:00:46"}
+{"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-03-27 06:00:46"}
+{"count":0,"level":"info","limit":20,"message":"User 69c574259125a4c6dfa0498e fetched orders","page":1,"queryTime":307,"service":"foodfreaky-api","timestamp":"2026-03-27 06:00:59","total":0}
+{"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-03-27 06:00:59"}
+{"count":0,"level":"info","limit":20,"message":"User 69c574259125a4c6dfa0498e fetched orders","page":1,"queryTime":36,"service":"foodfreaky-api","timestamp":"2026-03-27 06:00:59","total":0}
+{"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-03-27 06:01:00"}
+{"level":"info","message":"User yogibhai9171@gmail.com logged in with Google","service":"foodfreaky-api","timestamp":"2026-03-27 06:03:53"}
+{"count":3,"level":"info","limit":1000,"message":"Admin 69c597961f4d9bd595f4a2a2 fetched orders","page":1,"role":"rider","service":"foodfreaky-api","timestamp":"2026-03-27 06:03:53","total":3}
+{"count":3,"level":"info","limit":1000,"message":"Admin 69c597961f4d9bd595f4a2a2 fetched orders","page":1,"role":"rider","service":"foodfreaky-api","timestamp":"2026-03-27 06:03:53","total":3}

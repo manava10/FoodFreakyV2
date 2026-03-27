@@ -64,7 +64,7 @@ const VendorDashboardPage = () => {
             audioRef.current = audio;
         }
         return audioRef.current;
-    }, []);
+    }, [initAudio]);
 
     const enableSound = useCallback(async () => {
         try {
