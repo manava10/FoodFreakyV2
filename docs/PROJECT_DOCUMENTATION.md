@@ -34,6 +34,8 @@ This document provides a full technical and product overview of the YogiProject 
 21. [Testing & quality](#21-testing--quality)  
 22. [Glossary](#22-glossary)  
 23. [Revision history (template)](#23-revision-history-template)
+24. [Automations used](#24-automations-used)
+25. [Future enhancements](#25-future-enhancements)
 
 ---
 
@@ -423,7 +425,17 @@ Base path: all API routes are prefixed as shown. **Base URL example:** `https://
 
 **Location:** Only on **Dashboard** (`DashboardPage.jsx`).
 
-**Type:** Rule-based (no external LLM). Uses `GET /api/orders/myorders` with the user’s JWT.
+**Type:** Hybrid assistant (LLM + deterministic business logic).
+
+- The frontend sends chat prompts to `POST /api/chat`.
+- The backend routes/order-intents with a structured prompt, then executes deterministic logic for order operations and protected actions.
+- For natural-language responses (general answers, nutrition tips, food recommendations), the backend calls Gemini via `backend/utils/geminiClient.js`.
+
+**LLM model configuration:**
+
+- Provider: Google Gemini API (`https://generativelanguage.googleapis.com/v1beta` by default).
+- Primary model: `GEMINI_MODEL` env var, defaulting to **`gemini-1.5-flash`**.
+- Fallback logic: if model is unavailable, it retries with defaults and the first supported model from a preferred list (`gemini-2.0-flash`, `gemini-2.0-flash-lite`, `gemini-1.5-*`, etc.).
 
 **Capabilities (examples):**
 
@@ -656,5 +668,36 @@ Query: `page`, `limit`, `status`, `startDate`, `endDate`.
 
 ---
 
-*End of FoodFreaky / YogiProject documentation.*
+## 24. Automations used
 
+This project contains multiple built-in automations in runtime behavior:
+
+1. **Automatic rider assignment retry worker (backend):**  
+   `backend/index.js` runs `processPendingRiderAssignments()` every 1 minute via `setInterval`.
+2. **Auto-cancel automation for unassigned orders:**  
+   Pending rider assignments are automatically cancelled after 30 minutes when no rider is available (`backend/utils/riderAssignment.js`).
+3. **Real-time order update automation:**  
+   Socket.IO pushes `order:updated` events to customer/rider/vendor rooms to auto-refresh order state in dashboards.
+4. **Automatic delivery completion side effects:**  
+   On delivered orders, the backend triggers invoice generation/email flow and credits accrual logic.
+5. **Security automations in request pipeline:**  
+   Global sanitization middleware, route-specific Joi validation, and rate-limiting are applied automatically to incoming API traffic.
+
+**CI/CD automation status:** No GitHub Actions workflow files are present in this repository at the time of writing; deployment automation is currently platform-driven (Vercel for frontend, Render for backend).
+
+---
+
+## 25. Future enhancements
+
+Recommended technical enhancements based on current architecture:
+
+1. **Observability upgrades:** add distributed tracing and metrics dashboards (e.g., OpenTelemetry + Grafana) for API latency and chat performance.
+2. **Queue-based background jobs:** move periodic retry/cancellation tasks from in-process timers to a durable worker queue (BullMQ/Redis) for horizontal scalability.
+3. **CI/CD hardening:** add GitHub Actions workflows for lint/build/test/security scans on pull requests and protected branches.
+4. **AI governance improvements:** add prompt/version tracking, per-intent evaluation tests, and safety telemetry for assistant responses.
+5. **Caching and performance:** add selective Redis caching for high-read endpoints (restaurants, settings, coupons) and map-heavy dashboard reads.
+6. **Data layer scale:** introduce read-models/aggregation pipelines for analytics-heavy admin dashboards and archival strategy for old orders.
+
+---
+
+*End of FoodFreaky / YogiProject documentation.*
