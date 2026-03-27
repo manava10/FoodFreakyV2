@@ -64,7 +64,7 @@ const VendorDashboardPage = () => {
             audioRef.current = audio;
         }
         return audioRef.current;
-    }, [initAudio]);
+    }, []);
 
     const enableSound = useCallback(async () => {
         try {
@@ -81,7 +81,7 @@ const VendorDashboardPage = () => {
             setSoundError('Failed to enable sound. Please check browser audio permissions.');
             return false;
         }
-    }, []);
+    }, [initAudio]);
 
     const handleTestSound = useCallback(async () => {
         const ok = soundEnabledRef.current ? true : await enableSound();
