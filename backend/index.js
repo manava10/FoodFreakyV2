@@ -178,7 +178,9 @@ io.on('connection', (socket) => {
 });
 
 server.listen(PORT, () => {
+    console.log("The server is running on port:"+PORT);
     logger.info(`Server is running on port ${PORT} in ${process.env.NODE_ENV || 'development'} mode`);
+
 });
 
 // Background worker:

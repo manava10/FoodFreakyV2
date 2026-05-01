@@ -100,6 +100,12 @@ exports.login = async (req, res) => {
         if (!user.isVerified) {
             return res.status(401).json({ msg: 'Account not verified. Please check your email for an OTP.' });
         }
+
+        // If user registered with Google, they won't have a password
+        if (!user.password) {
+            return res.status(400).json({ msg: 'Please log in with Google.' });
+        }
+
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({ msg: 'Invalid credentials.' });

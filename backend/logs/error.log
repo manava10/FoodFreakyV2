@@ -89,3 +89,4 @@
 {"error":"There is more than one 2dsphere index on yogiproject.restaurants; unsure which to use for $geoNear","level":"error","message":"Geo recommend (wide) failed:","service":"foodfreaky-api","timestamp":"2026-03-27 05:43:51"}
 {"error":"There is more than one 2dsphere index on yogiproject.restaurants; unsure which to use for $geoNear","level":"error","message":"Geo recommend failed:","service":"foodfreaky-api","timestamp":"2026-03-27 05:44:40"}
 {"error":"There is more than one 2dsphere index on yogiproject.restaurants; unsure which to use for $geoNear","level":"error","message":"Geo recommend (wide) failed:","service":"foodfreaky-api","timestamp":"2026-03-27 05:44:40"}
+{"email":"test","error":"msg","level":"error","message":"test error","service":"foodfreaky-api","timestamp":"2026-05-01 15:16:39"}
