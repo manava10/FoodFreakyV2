@@ -3770,3 +3770,6 @@
 {"level":"info","message":"User mmanav101204@gmail.com verified successfully","service":"foodfreaky-api","timestamp":"2026-05-04 11:51:05"}
 {"count":0,"level":"info","message":"Admin 69f83aa7eb646bd4731a02fb fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-05-04 11:51:06"}
 {"count":0,"level":"info","message":"Admin 69f83aa7eb646bd4731a02fb fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-05-04 11:51:06"}
+{"level":"info","message":"Password reset email sent to mmanavp10@gmail.com","service":"foodfreaky-api","timestamp":"2026-05-04 12:12:08"}
+{"level":"info","message":"Server is running on port 5001 in development mode","service":"foodfreaky-api","timestamp":"2026-05-04 12:13:07"}
+{"level":"info","message":"Password reset email sent to mmanavp10@gmail.com","service":"foodfreaky-api","timestamp":"2026-05-04 12:13:32"}

@@ -80,8 +80,8 @@ exports.registerVendor = async (req, res) => {
             });
         }
 
-        const message = `<p>Your vendor verification code for FoodFreaky is:</p><h2>${otp}</h2><p>This code will expire in 10 minutes.</p>`;
-        await sendEmail({ email: user.email, subject: 'FoodFreaky Vendor - Email Verification', html: message });
+        const message = `<p>Your verification code is:</p> <h2>${otp}</h2> <p>It will expire in 10 minutes.</p>`;
+        await sendEmail({ email: user.email, subject: 'FoodFreaky - Email Verification', html: message });
 
         logger.info(`OTP sent to vendor ${email} for registration`);
         res.status(200).json({ success: true, msg: 'OTP sent to email. Please verify to activate your vendor account and restaurant.' });

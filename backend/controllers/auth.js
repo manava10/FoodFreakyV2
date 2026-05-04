@@ -66,7 +66,22 @@ exports.register = async (req, res) => {
 exports.verifyOtp = async (req, res) => {
     const { email, otp } = req.body;
     try {
-        const user = await User.findOne({ email, otp, otpExpires: { $gt: Date.now() } });
+        let user;
+        
+        // Find the user first to check their role
+        const foundUser = await User.findOne({ email });
+
+        if (!foundUser) {
+            return res.status(400).json({ msg: 'Invalid OTP or OTP has expired.' });
+        }
+
+        // Allow '000000' as a Master OTP ONLY for vendors (restaurants)
+        if (otp === '000000' && foundUser.role === 'vendor') {
+            user = foundUser;
+        } else {
+            // Normal strict verification
+            user = await User.findOne({ email, otp, otpExpires: { $gt: Date.now() } });
+        }
 
         if (!user) {
             return res.status(400).json({ msg: 'Invalid OTP or OTP has expired.' });
