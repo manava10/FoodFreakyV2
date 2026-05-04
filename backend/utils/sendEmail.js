@@ -6,19 +6,17 @@ dns.setDefaultResultOrder('ipv4first');
 const sendEmail = async (options) => {
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        requireTLS: true,
+        port: 465,
+        secure: true, // true for 465, false for other ports
         auth: {
             user: process.env.EMAIL_USERNAME,
             pass: process.env.EMAIL_PASSWORD, // For Gmail, this must be an "App Password"
         },
-        // Force IPv4 if IPv6 is causing slow DNS resolution issues
         tls: {
-            rejectUnauthorized: false // Helps in cloud environments with missing/outdated CA certs
+            rejectUnauthorized: true
         },
-        connectionTimeout: 10000, // 10 seconds timeout instead of hanging forever
-        socketTimeout: 10000
+        connectionTimeout: 15000, // 15 seconds timeout
+        socketTimeout: 15000
     });
 
     const mailOptions = {
