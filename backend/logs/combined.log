@@ -3779,3 +3779,7 @@
 {"level":"info","message":"Password reset email sent to mmanavp10@gmail.com","service":"foodfreaky-api","timestamp":"2026-05-04 12:29:58"}
 {"level":"info","message":"Server is running on port 5001 in development mode","service":"foodfreaky-api","timestamp":"2026-05-04 12:30:22"}
 {"level":"info","message":"Password reset email sent to mmanavp10@gmail.com","service":"foodfreaky-api","timestamp":"2026-05-04 12:30:30"}
+{"level":"info","message":"Server is running on port 5001 in development mode","service":"foodfreaky-api","timestamp":"2026-05-04 12:37:21"}
+{"level":"info","message":"Password reset email sent to mmanavp10@gmail.com","service":"foodfreaky-api","timestamp":"2026-05-04 12:37:58"}
+{"level":"info","message":"Server is running on port 5001 in development mode","service":"foodfreaky-api","timestamp":"2026-05-04 12:47:07"}
+{"level":"info","message":"Password reset email sent to mmanavp10@gmail.com","service":"foodfreaky-api","timestamp":"2026-05-04 12:47:50"}

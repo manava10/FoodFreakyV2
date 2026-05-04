@@ -88,7 +88,7 @@ exports.registerVendor = async (req, res) => {
 
     } catch (error) {
         logger.error('Vendor registration error:', { error: error.message, stack: error.stack });
-        res.status(500).json({ msg: 'Server error during vendor registration.' });
+        res.status(500).json({ msg: 'Server error during vendor registration: ' + error.message });
     }
 };
 
