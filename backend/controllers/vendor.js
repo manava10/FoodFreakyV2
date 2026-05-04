@@ -19,21 +19,25 @@ exports.registerVendor = async (req, res) => {
 
     try {
         let user = await User.findOne({ email });
-        if (user && user.isVerified) {
+        // Only reject if they are already a fully verified vendor
+        if (user && user.isVerified && user.role === 'vendor') {
             return res.status(400).json({ msg: 'Vendor account with this email already exists and is verified.' });
         }
 
         const otp = generateOTP();
         const otpExpires = Date.now() + 10 * 60 * 1000;
 
-        if (user && !user.isVerified) {
+        if (user) {
+            // User exists (either verified user or unverified) -> Upgrade to vendor
             user.name = name;
-            user.password = password;
+            if (password) {
+                user.password = password;
+                user.markModified('password');
+            }
             user.contactNumber = contactNumber;
             user.role = 'vendor';
             user.otp = otp;
             user.otpExpires = otpExpires;
-            user.markModified('password');
             await user.save();
         } else {
             user = await User.create({ 
