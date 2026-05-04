@@ -3765,3 +3765,8 @@
 {"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-05-04 11:22:37"}
 {"count":0,"level":"info","message":"Admin 69c574259125a4c6dfa0498e fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-05-04 11:22:37"}
 {"level":"info","message":"Password reset email sent to mmanavp10@gmail.com","service":"foodfreaky-api","timestamp":"2026-05-04 11:23:19"}
+{"level":"info","message":"Server is running on port 5001 in development mode","service":"foodfreaky-api","timestamp":"2026-05-04 11:48:40"}
+{"level":"info","message":"OTP sent to vendor mmanav101204@gmail.com for registration","service":"foodfreaky-api","timestamp":"2026-05-04 11:50:27"}
+{"level":"info","message":"User mmanav101204@gmail.com verified successfully","service":"foodfreaky-api","timestamp":"2026-05-04 11:51:05"}
+{"count":0,"level":"info","message":"Admin 69f83aa7eb646bd4731a02fb fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-05-04 11:51:06"}
+{"count":0,"level":"info","message":"Admin 69f83aa7eb646bd4731a02fb fetched idle riders list","service":"foodfreaky-api","timestamp":"2026-05-04 11:51:06"}
